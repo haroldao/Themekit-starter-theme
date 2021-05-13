@@ -37,7 +37,7 @@
   {% include 'css-variables' %}
 
   <script>
-    document.documentElement.className = document.documentElement.className.replace('no-js', '');
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
     window.theme = {
       strings: {
@@ -50,10 +50,11 @@
   </script>
 
   {% include 'script-tags', layout: 'theme' %}
-
+  <!-- Content for header -->
   {{ content_for_header }}
+  <!-- end content for header -->
 </head>
-<body>
+<body class="{{ template }}">
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {% section 'header' %}
@@ -61,7 +62,7 @@
   <main role="main">
     {{ content_for_layout }}
   </main>
-
+  test
   {% section 'footer' %}
 </body>
 </html>
